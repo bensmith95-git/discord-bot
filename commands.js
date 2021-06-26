@@ -2,6 +2,7 @@ import { gifCommand } from './commands/gif.js';
 import { helloCommand } from './commands/hello.js';
 import { usersCommand } from './commands/users.js';
 import { clearCommand } from './commands/clear.js';
+import { cleanCommand } from './commands/clean.js';
 
 export const commandHandler = (msg) => {
 	if (msg.channel.id === process.env.GENERAL_CHANNEL_ID) {
@@ -21,6 +22,10 @@ export const commandHandler = (msg) => {
 					break;
 				case 'clear':
 					clearCommand(msg, tokens);
+					break;
+				case 'clean':
+					cleanCommand(msg);
+					break;
 				default:
 					msg.channel.send('not a command!');
 					break;

@@ -1,8 +1,13 @@
-export const clearCommand = (msg, num) => {
+export const clearCommand = async (msg, num) => {
 	const channel = msg.channel;
-	channel.bulkDelete(100).then(() => {
-		channel
-			.send('Deleted 10 messages')
-			.then((message) => message.delete({ timeout: 3000 }));
-	});
+	const number =
+		num.length === 0 ? 10 : parseInt(num) > 100 ? 100 : parseInt(num);
+
+	try {
+		await channel.bulkDelete(number);
+		let message = await channel.send(`Deleted ${number} messages`);
+		await message.delete({ timeout: 3000 });
+	} catch (error) {
+		console.log(error);
+	}
 };
