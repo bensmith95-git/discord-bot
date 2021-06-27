@@ -49,4 +49,8 @@ export const commandDescriptions = [
 		description:
 			'Take a vote on something about the lads. Click the reaction to vote.',
 	},
+	{
+		name: 'define',
+		description: 'Get the definition and synonyms of a word',
+	},
 ];
