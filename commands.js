@@ -9,6 +9,7 @@ import { chooseCommand as choose } from './commands/choose.js';
 import { fartCommand as fart } from './commands/fart.js';
 import { insultCommand as insult } from './commands/insult.js';
 import { mcuCommand as mcu } from './commands/mcu.js';
+import { voteCommand as vote } from './commands/vote.js';
 
 const commands = {
 	gif,
@@ -22,6 +23,7 @@ const commands = {
 	fart,
 	insult,
 	mcu,
+	vote,
 };
 export const commandList = [];
 for (var command in commands) {

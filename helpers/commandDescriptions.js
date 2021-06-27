@@ -44,4 +44,9 @@ export const commandDescriptions = [
 		name: 'mcu',
 		description: 'Get information about the next MCU film to release',
 	},
+	{
+		name: 'vote',
+		description:
+			'Take a vote on something about the lads. Click the reaction to vote.',
+	},
 ];
