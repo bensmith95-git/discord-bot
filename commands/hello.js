@@ -1,7 +1,6 @@
 import { randomIndex } from '../helpers/helpers.js';
-
-const replies = ['Hello there!', 'Hi', "What's up?"];
+import { content } from '../content.js';
 
 export const helloCommand = (msg) => {
-	msg.channel.send(randomIndex(replies));
+	msg.channel.send(randomIndex(content.commands.hello.replies));
 };
