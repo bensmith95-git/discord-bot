@@ -1,6 +1,5 @@
 import Discord from 'discord.js';
 import fetch from 'node-fetch';
-import moment from 'moment';
 
 export const defineCommand = async (msg, query) => {
 	let url = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${query[0]}?key=${process.env.DICTIONARY_KEY}`;

@@ -53,4 +53,8 @@ export const commandDescriptions = [
 		name: 'define',
 		description: 'Get the definition and synonyms of a word',
 	},
+	{
+		name: 'marvel',
+		description: 'Get information about marvel comics',
+	},
 ];
