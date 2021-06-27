@@ -1,0 +1,22 @@
+{
+	"name": "discordbot",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Hello World!",
+	"main": "bot.js",
+	"scripts": {
+		"test": "jest",
+		"test-watch": "jest --watch",
+		"start": "node bot.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"discord.js": "^12.5.3",
+		"dotenv": "^10.0.0",
+		"node-fetch": "^2.6.1"
+	},
+	"devDependencies": {
+		"jest": "^27.0.5"
+	}
+}
