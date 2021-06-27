@@ -7,8 +7,20 @@ import { helpCommand as help } from './commands/help.js';
 import { flipCommand as flip } from './commands/flip.js';
 import { chooseCommand as choose } from './commands/choose.js';
 import { fartCommand as fart } from './commands/fart.js';
+import { insultCommand as insult } from './commands/insult.js';
 
-const commands = { gif, hello, users, erase, clean, help, flip, choose, fart };
+const commands = {
+	gif,
+	hello,
+	users,
+	erase,
+	clean,
+	help,
+	flip,
+	choose,
+	fart,
+	insult,
+};
 export const commandList = [];
 for (var command in commands) {
 	commandList.push(command);

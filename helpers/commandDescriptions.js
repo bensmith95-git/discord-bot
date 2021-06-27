@@ -36,4 +36,8 @@ export const commandDescriptions = [
 		name: 'fart',
 		description: 'You already know',
 	},
+	{
+		name: 'insult',
+		description: 'Hurl abuse at yourself or someone else',
+	},
 ];
