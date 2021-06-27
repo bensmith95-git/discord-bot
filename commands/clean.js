@@ -7,7 +7,7 @@ export const cleanCommand = async (msg) => {
 		(message) =>
 			(message.author.bot === true &&
 				!message.content.includes('https://giphy.com/gifs/')) ||
-			message.content.charAt(0) === '!'
+			message.content.charAt(0) === '?'
 	);
 	let numMessages = botMessages.size;
 	await channel.bulkDelete(botMessages);

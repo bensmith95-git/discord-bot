@@ -1,35 +1,28 @@
-import { gifCommand } from './commands/gif.js';
-import { helloCommand } from './commands/hello.js';
-import { usersCommand } from './commands/users.js';
-import { clearCommand } from './commands/clear.js';
-import { cleanCommand } from './commands/clean.js';
+import { gifCommand as gif } from './commands/gif.js';
+import { helloCommand as hello } from './commands/hello.js';
+import { usersCommand as users } from './commands/users.js';
+import { eraseCommand as erase } from './commands/erase.js';
+import { cleanCommand as clean } from './commands/clean.js';
+import { helpCommand as help } from './commands/help.js';
+
+const commands = { gif, hello, users, erase, clean, help };
+const commandList = [];
+for (var command in commands) {
+	commandList.push(command);
+}
+commandList.sort();
 
 export const commandHandler = (msg) => {
-	// if (msg.channel.id === process.env.GENERAL_CHANNEL_ID) {
 	let tokens = msg.content.split(' ');
 	let command = tokens.shift();
-	if (command.charAt(0) === '!') {
+	if (command.charAt(0) === '?') {
 		command = command.substring(1);
-		switch (command) {
-			case 'gif':
-				gifCommand(msg, tokens);
-				break;
-			case 'hello':
-				helloCommand(msg);
-				break;
-			case 'users':
-				usersCommand(msg);
-				break;
-			case 'clear':
-				clearCommand(msg, tokens);
-				break;
-			case 'clean':
-				cleanCommand(msg);
-				break;
-			default:
-				msg.channel.send('not a command!');
-				break;
+		if (commands.hasOwnProperty(command)) {
+			commands[command](msg, tokens, commandList);
+		} else {
+			msg.channel.send(
+				`Bruh. '${command}' is not a command! 🤦‍♂️\nUse **?help** for a list of commands`
+			);
 		}
 	}
-	// }
 };

@@ -1,11 +1,17 @@
 import fetch from 'node-fetch';
-import { randomIndex } from '../helpers.js';
+import { randomIndex } from '../helpers/helpers.js';
 
 export const gifCommand = async (msg, query) => {
-	let searchTerm = '';
-	searchTerm = query.length >= 1 ? (searchTerm = query.join(' ')) : 'robot';
+	let searchTerm,
+		url = '';
 
-	let url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIF_TOKEN}&q=${searchTerm}&limit=5&rating=g`;
+	if (query.length > 0) {
+		searchTerm = query.join(' ');
+		url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIF_TOKEN}&q=${searchTerm}&limit=10&rating=g`;
+	} else {
+		url = `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.GIF_TOKEN}&limit=10&rating=g`;
+	}
+
 	let response = await fetch(url);
 	let json = await response.json();
 

@@ -1,4 +1,4 @@
-import { randomIndex } from '../helpers.js';
+import { randomIndex } from '../helpers/helpers.js';
 
 const replies = ['Hello there!', 'Hi', "What's up?"];
 
