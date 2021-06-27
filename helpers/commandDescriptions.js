@@ -24,4 +24,16 @@ export const commandDescriptions = [
 		name: 'users',
 		description: 'Returns all users status and activity',
 	},
+	{
+		name: 'flip',
+		description: 'Flip a coin!',
+	},
+	{
+		name: 'choose',
+		description: 'Choose between two or more options. seperate using [,]',
+	},
+	{
+		name: 'fart',
+		description: 'You already know',
+	},
 ];

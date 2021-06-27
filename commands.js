@@ -4,9 +4,12 @@ import { usersCommand as users } from './commands/users.js';
 import { eraseCommand as erase } from './commands/erase.js';
 import { cleanCommand as clean } from './commands/clean.js';
 import { helpCommand as help } from './commands/help.js';
+import { flipCommand as flip } from './commands/flip.js';
+import { chooseCommand as choose } from './commands/choose.js';
+import { fartCommand as fart } from './commands/fart.js';
 
-const commands = { gif, hello, users, erase, clean, help };
-const commandList = [];
+const commands = { gif, hello, users, erase, clean, help, flip, choose, fart };
+export const commandList = [];
 for (var command in commands) {
 	commandList.push(command);
 }
@@ -18,7 +21,7 @@ export const commandHandler = (msg) => {
 	if (command.charAt(0) === '?') {
 		command = command.substring(1);
 		if (commands.hasOwnProperty(command)) {
-			commands[command](msg, tokens, commandList);
+			commands[command](msg, tokens);
 		} else {
 			msg.channel.send(
 				`Bruh. '${command}' is not a command! 🤦‍♂️\nUse **?help** for a list of commands`

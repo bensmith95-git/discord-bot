@@ -1,12 +1,13 @@
 import Discord from 'discord.js';
 import { client } from '../bot.js';
 import { commandDescriptions } from '../helpers/commandDescriptions.js';
+import { commandList } from '../commands.js';
 
 commandDescriptions.sort((a, b) => {
 	return a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
 });
 
-export const helpCommand = (msg, tokens, commandList) => {
+export const helpCommand = (msg) => {
 	const embed = new Discord.MessageEmbed()
 		.setTitle('HeLp mE! 🤡')
 		.setDescription("Here's the list of commands you can use:")

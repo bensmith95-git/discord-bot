@@ -9,5 +9,8 @@ export const content = {
 				"'Ello, mate",
 			],
 		},
+		flip: {
+			responses: ["It's Heads!", "It's Tails!"],
+		},
 	},
 };
