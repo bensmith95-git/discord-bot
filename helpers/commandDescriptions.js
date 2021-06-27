@@ -40,4 +40,8 @@ export const commandDescriptions = [
 		name: 'insult',
 		description: 'Hurl abuse at yourself or someone else',
 	},
+	{
+		name: 'mcu',
+		description: 'Get information about the next MCU film to release',
+	},
 ];

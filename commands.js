@@ -8,6 +8,7 @@ import { flipCommand as flip } from './commands/flip.js';
 import { chooseCommand as choose } from './commands/choose.js';
 import { fartCommand as fart } from './commands/fart.js';
 import { insultCommand as insult } from './commands/insult.js';
+import { mcuCommand as mcu } from './commands/mcu.js';
 
 const commands = {
 	gif,
@@ -20,6 +21,7 @@ const commands = {
 	choose,
 	fart,
 	insult,
+	mcu,
 };
 export const commandList = [];
 for (var command in commands) {
