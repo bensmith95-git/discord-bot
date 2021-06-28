@@ -6,12 +6,14 @@ const __dirname = (() => {
 	return path.resolve(process.platform == 'win32' ? x.substr(1) : x);
 })();
 
-export const fartCommand = async (msg) => {
+export const fartCommand = async (msg, number) => {
 	try {
 		let voiceChannel = msg.member.voice.channel;
 		let connection = await voiceChannel.join();
+		const fartNumber =
+			number.length > 0 && number[0] > 0 ? number[0] : randomNumber(1, 9);
 		connection.play(
-			path.join(__dirname, `../audio/fart_${randomNumber(1, 4)}.mp3`)
+			path.join(__dirname, `../audio/fart_${fartNumber}.mp3`)
 		);
 		msg.channel.send('💨');
 		setTimeout(() => {
