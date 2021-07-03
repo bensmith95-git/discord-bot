@@ -1,7 +1,7 @@
 import { randomIndex } from '../helpers/helpers.js';
 
-export const chooseCommand = (msg, tokens) => {
-	let choices = tokens.join(' ').split(',');
+export const chooseCommand = (msg, args) => {
+	let choices = args.join(' ').split(',');
 	if (choices.length > 1) {
 		msg.channel.send(randomIndex(choices));
 	} else {

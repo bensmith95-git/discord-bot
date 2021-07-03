@@ -1,0 +1,14 @@
+export { gifCommand as gif } from './gif.js';
+export { helloCommand as hello } from './hello.js';
+export { usersCommand as users } from './users.js';
+export { eraseCommand as erase } from './erase.js';
+export { cleanCommand as clean } from './clean.js';
+export { helpCommand as help } from './help.js';
+export { flipCommand as flip } from './flip.js';
+export { chooseCommand as choose } from './choose.js';
+export { fartCommand as fart } from './fart.js';
+export { insultCommand as insult } from './insult.js';
+export { mcuCommand as mcu } from './mcu.js';
+export { voteCommand as vote } from './vote.js';
+export { defineCommand as define } from './define.js';
+export { marvelCommand as marvel } from './marvel.js';

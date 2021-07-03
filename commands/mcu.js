@@ -2,7 +2,7 @@ import Discord from 'discord.js';
 import fetch from 'node-fetch';
 import moment from 'moment';
 
-export const mcuCommand = async (msg, query) => {
+export const mcuCommand = async (msg) => {
 	let url = 'https://www.whenisthenextmcufilm.com/api';
 
 	const embed = new Discord.MessageEmbed();

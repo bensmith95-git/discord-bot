@@ -1,51 +1,28 @@
-import { gifCommand as gif } from './commands/gif.js';
-import { helloCommand as hello } from './commands/hello.js';
-import { usersCommand as users } from './commands/users.js';
-import { eraseCommand as erase } from './commands/erase.js';
-import { cleanCommand as clean } from './commands/clean.js';
-import { helpCommand as help } from './commands/help.js';
-import { flipCommand as flip } from './commands/flip.js';
-import { chooseCommand as choose } from './commands/choose.js';
-import { fartCommand as fart } from './commands/fart.js';
-import { insultCommand as insult } from './commands/insult.js';
-import { mcuCommand as mcu } from './commands/mcu.js';
-import { voteCommand as vote } from './commands/vote.js';
-import { defineCommand as define } from './commands/define.js';
-import { marvelCommand as marvel } from './commands/marvel.js';
+import * as allCommands from './commands/index.js';
 
-const commands = {
-	gif,
-	hello,
-	users,
-	erase,
-	clean,
-	help,
-	flip,
-	choose,
-	fart,
-	insult,
-	mcu,
-	vote,
-	define,
-	marvel,
-};
+const commands = { ...allCommands };
+
 export const commandList = [];
+
 for (var command in commands) {
 	commandList.push(command);
 }
 commandList.sort();
 
-export const commandHandler = (msg) => {
-	let tokens = msg.content.split(' ');
-	let command = tokens.shift();
+export const commandHandler = async (msg) => {
+	let args = msg.content.split(' ');
+	let command = args.shift();
 	if (command.charAt(0) === '?') {
 		command = command.substring(1);
 		if (commands.hasOwnProperty(command)) {
-			commands[command](msg, tokens);
+			commands[command](msg, args);
 		} else {
 			msg.channel.send(
 				`Bruh. '${command}' is not a command! 🤦‍♂️\nUse **?help** for a list of commands`
 			);
 		}
+		try {
+			await msg.delete({ timeout: 3000 });
+		} catch (error) {}
 	}
 };
